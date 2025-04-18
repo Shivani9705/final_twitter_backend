@@ -7,7 +7,7 @@ import tweetRoute from "./routes/tweetRoute.js";
 import cors from "cors";
 
 dotenv.config({ path: ".env" });
-
+const port = process.env.PORT || 4000;
 // Connect to DB
 databaseConnection();
 
