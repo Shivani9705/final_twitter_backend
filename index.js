@@ -26,11 +26,11 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 // Logging middleware (optional for debugging)
-app.use((req, res, next) => {
-  console.log("Request Cookies:", req.cookies);
-  console.log("Request Headers:", req.headers.authorization);
-  next();
-});
+// app.use((req, res, next) => {
+//   console.log("Request Cookies:", req.cookies);
+//   console.log("Request Headers:", req.headers.authorization);
+//   next();
+// });
 
 app.get('/',(req,res)=>{
   res.send("Welcome to the API")
