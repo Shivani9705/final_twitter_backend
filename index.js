@@ -32,6 +32,10 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get('/',(req,res)=>{
+  res.send("Welcome to the API")
+})
+
 // Routes
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/tweet", tweetRoute);
