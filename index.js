@@ -19,11 +19,48 @@ app.use(express.json());
 app.use(cookieParser());
 
 // CORS Configuration
-const corsOptions = {
-  origin: "http://localhost:3000", // Frontend origin
-  credentials: true,              // Allow cookies to be sent
-};
-app.use(cors(corsOptions));
+// const corsOptions = {
+//   origin: "http://localhost:3000", // Frontend origin
+//   origin: "https://incandescent-selkie-a51894.netlify.app", // Frontend origin
+//   credentials: true,              // Allow cookies to be sent
+// };
+// app.use(cors(corsOptions));
+
+// const allowedOrigins = ['http://localhost:3000', 'https://serene-daffodil-5eaf62.netlify.app'];
+
+// app.use(cors({
+//   origin: function (origin, callback) {
+//     if (!origin || allowedOrigins.includes(origin)) {
+//       callback(null, true)
+//     } else {
+//       callback(new Error('Not allowed by CORS'))
+//     }
+//   },
+//   credentials: true
+// }));
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://serene-daffodil-5eaf62.netlify.app',
+  'https://incandescent-selkie-a51894.netlify.app'
+];
+// https://incandescent-selkie-a51894.netlify.app
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+}));
+
+// app.use(cors({
+//   origin: true,
+//   credentials: true
+// }));
+
 
 // Logging middleware (optional for debugging)
 // app.use((req, res, next) => {
