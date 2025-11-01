@@ -13,9 +13,14 @@ Live Demo
 🛠️ Tech Stack
 
 Frontend: React.js, Context API, CSS 
+
 Backend: Node.js, Express.js
+
 Database: MongoDB Atlas
+
 Authentication: JSON Web Token (JWT)
+
 Hosting: Netlify (Frontend), Render (Backend)
+
 
 
